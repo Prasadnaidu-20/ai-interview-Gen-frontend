@@ -92,7 +92,7 @@ function Chat() {
   return (
     <div className="flex h-screen bg-[#0f1117] text-[#e4e6eb] overflow-hidden font-sans">
       <Sidebar />
-      <main className="flex flex-col flex-1 overflow-hidden">  {/* ← overflow-hidden here */}
+      <main className="flex flex-col flex-1 overflow-hidden"> 
         <header className="flex items-center justify-between px-6 py-3.5 border-b border-[#1e2130] bg-[#161820] shrink-0">
           <div className="flex items-center gap-2">
             <span className="text-xl">🕘</span>
@@ -116,7 +116,6 @@ function Chat() {
       <Sidebar />
 
       <main className="flex flex-col flex-1 overflow-hidden">
-        {/* Header */}
         <header className="flex items-center justify-between px-6 py-3.5 border-b border-[#1e2130] bg-[#161820] shrink-0">
           <div className="flex items-center gap-1.5">
             <span className="text-2xl text-[#4b5063] font-bold">#</span>
@@ -125,7 +124,6 @@ function Chat() {
           <span className="text-xs text-[#5a5f77]">AI-powered question generator</span>
         </header>
 
-        {/* Messages */}
         <div className="flex-1 overflow-y-auto px-6 pt-6 pb-3 flex flex-col gap-4 scrollbar-thin">
           {messages.length === 0 && (
             <div className="m-auto text-center p-10">
@@ -206,7 +204,7 @@ function Chat() {
           <div ref={bottomRef} />
         </div>
 
-        {/* Input */}
+
         <div className="flex items-center gap-3 px-6 py-4 bg-[#161820] border-t border-[#1e2130] shrink-0">
           <input
             type="text"
