@@ -19,7 +19,6 @@ export const HistoryPage = () => {
     fetchHistory();
   }, []);
 
-  // Group questions by topic
   const grouped = history.reduce((acc, item) => {
     if (!acc[item.topic]) acc[item.topic] = [];
     acc[item.topic].push(item);
@@ -46,7 +45,6 @@ export const HistoryPage = () => {
 
       <div className="history-root max-w-3xl mx-auto">
 
-        {/* Loading */}
         {isLoading && (
           <div className="flex flex-col items-center justify-center py-24 gap-4">
             <div className="flex gap-1.5">
@@ -62,7 +60,6 @@ export const HistoryPage = () => {
           </div>
         )}
 
-        {/* Empty state */}
         {!isLoading && history.length === 0 && (
           <div className="flex flex-col items-center justify-center py-24 text-center">
             <div className="text-5xl mb-4">🕘</div>
@@ -73,7 +70,6 @@ export const HistoryPage = () => {
           </div>
         )}
 
-        {/* Grouped topic cards */}
         {!isLoading && Object.keys(grouped).length > 0 && (
           <div className="flex flex-col gap-5">
             {Object.entries(grouped).map(([topic, items], groupIdx) => (
@@ -81,7 +77,6 @@ export const HistoryPage = () => {
                 key={topic}
                 className="bg-[#161820] border border-[#1e2130] rounded-2xl overflow-hidden"
               >
-                {/* Topic header */}
                 <div className="flex items-center justify-between px-5 py-4 border-b border-[#1e2130]">
                   <div className="flex items-center gap-3">
                     <div className={`w-2.5 h-2.5 rounded-full bg-gradient-to-br ${topicColors[groupIdx % topicColors.length]}`} />
@@ -92,7 +87,6 @@ export const HistoryPage = () => {
                   </span>
                 </div>
 
-                {/* Questions list */}
                 <ul className="flex flex-col divide-y divide-[#1a1d2e]">
                   {items.map((item, idx) => (
                     <li
